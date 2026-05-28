@@ -1,6 +1,6 @@
 :root {
-    --dark-grey: rgb(226 232 240);
     --bright-grey: rgb(247 250 252);
+    --dark-grey: rgb(226 232 240);
 }
 
 * {
@@ -10,8 +10,7 @@
 }
 
 body {
-    font-family: Arial;
-    background-color: var(--dark-grey);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 nav {
@@ -41,10 +40,22 @@ nav ul {
     flex-direction: row;
     justify-content: space-between;
 }
+
+.button {
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    align-self: flex-start; 
+    transition: background-color 0.2s ease;
+}
+
 /* #################### */
 
 .introduction {
-    background-color: var(--dark-grey);
+    background-color: var(--bright-grey);
 }
 
 .introduction .container{    
@@ -52,7 +63,7 @@ nav ul {
 }
 
 .introduction .image {
-    background-color: grey;
+    background-color: var(--dark-gey);
     width: 100px;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
@@ -66,39 +77,130 @@ nav ul {
 /* ##################### */
 
 .about {
-    background-color: var(--bright-grey);
+    background-color: white;
 }
 
 .about .container{
     margin: 30px 30px;
+    gap: 40px;
+}
+
+.skills-container {
+    flex: 1; 
+}
+
+.skills-container .skills-list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.skill {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.skill span {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.skill-level-container {
+    width: 150px;
+    height: 10px;
+    background-color: var(--dark-grey);
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.skill-level-container .level {
+    height: 100%;
+    background-color: #2563eb;
+    border-radius: px;
+}
+
+.skill-level-container .level {
+
 }
 
 /* ##################### */
 
+.projects {
+    background-color: var(--bright-grey);
+    padding: 4rem 0;
+}
+
 .projects .container{
     flex-direction: column;
     align-items: center;
+    gap: 2rem;
 }
 
 .projects-container {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: space-between;
+    align-items: stretch;
     gap: 30px;
+    width: 100%;
 }
 
 .card {
+    flex: 1;
     display: flex;
     flex-direction: column;
+    background-color: white;
     border-radius: 12px;
     box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
 
+.card-image {
+    width: 100%;
+    height: 200px;
+    background-color: var(--dark-grey);
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.card-content h3 {
+    font-size: 1.25rem;
+    color: #1e293b;
+}
+
+.card-content p {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.view-project {
+    background-color: #f59e0b;
+}
+
+.view-project:hover {
+    background-color: #d97706;
 }
 
 /* ################### */
 
 .get-in-touch {
-    background-color: var(--bright-grey);
+    background-color: white;
 }
 
 .get-in-touch .container{
@@ -127,7 +229,6 @@ nav ul {
     align-items: start;
     margin: 5px;
 }
-
 
 .get-in-touch-container .contact-container {
     display: flex;
