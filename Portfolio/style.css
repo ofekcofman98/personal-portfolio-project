@@ -1,6 +1,8 @@
 :root {
     --bright-grey: rgb(247 250 252);
     --dark-grey: rgb(226 232 240);
+    --text-grey: #1e293b;
+    --primary-blue: #2563eb;
 }
 
 * {
@@ -18,15 +20,30 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 5px 20px;
+    padding: 2px 20px;
     align-items: center;
+    
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+nav .name {
+    padding: 0 50px;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-blue);
 }
 
 nav ul {
     display: flex;
-    gap: 20px;
-    
+    gap: 2px;
+
     list-style: none;
+}
+
+nav a{
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 40px;
 }
 
 
@@ -118,7 +135,7 @@ nav ul {
 
 .skill-level-container .level {
     height: 100%;
-    background-color: #2563eb;
+    background-color: var(--primary-blue);
     border-radius: px;
 }
 
@@ -201,33 +218,43 @@ nav ul {
 
 .get-in-touch {
     background-color: white;
+    padding: 4rem 0;
 }
 
 .get-in-touch .container{
     flex-direction: column;
     align-items: center;
+    gap: 3rem;
 }
 
 .get-in-touch-container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    gap: 50px;
-}
+    align-items: flex-start;
+    gap: 80px; 
+    width: 100%;}
 
 .get-in-touch-container form {
+    flex: 1.2;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: start;
+    gap: 1.5rem; 
+    width: 100%;
 }
 
-.get-in-touch-container form .input-container {
+.input-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: start;
-    margin: 5px;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.input-container label {
+    font-weight: 600;
+    color: var(--text-grey);
+    font-size: 0.9rem;
 }
 
 .get-in-touch-container .contact-container {
@@ -237,6 +264,84 @@ nav ul {
     justify-content:start;
 }
 
+.input-container input[type="text"],
+.input-container input[type="email"],
+.input-container textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.input-container input:focus,
+.input-container textarea:focus {
+    border-color: var(--primary-blue);
+}
+
+.input-container textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.submit-button {
+    background-color: var(--primary-blue); 
+}
+
+.submit-button:hover {
+    background-color: var(--primary-blue); 
+}
+
+.contact-container {
+    flex: 0.8;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.contact-container h3 {
+    font-size: 1.5rem;
+    color: var(--text-grey);
+    margin-bottom: 0.5rem;
+}
+
+.contact-container a, 
+.contact-container span {
+    color: var(--text-grey);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s ease;
+}
+
+.contact-container a:hover {
+    color: var(--primary-blue);
+}
+
+.social-buttons-container {
+    display: flex;
+    gap: 15px;
+    margin-top: 1rem;
+}
+
+.social-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-blue);
+    color: white !important;
+    border-radius: 50%;
+    font-size: 0.8rem; 
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.social-button:hover {
+    transform: scale(1.15);
+    background-color: var(--primary-blue);
+}
 /* ########## */
 
 footer {
