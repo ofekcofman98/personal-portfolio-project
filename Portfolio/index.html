@@ -10,6 +10,11 @@
     <header>
         <nav>
             <div class="name">Ofek Cofman</div>
+            <button class="hamburger-menu" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="links">
                 <li>
                     <a href="">Home</a>
@@ -31,21 +36,21 @@
             <div class="container">
                 <div class="left">
                     <h1 class="position">Full-Stack Developer</h1>
-                    <p>Building complex software systems from design to production with .NET, C#, Python, TypeScript, and distributed architectures</p>
-                    <button>Get In Touch</button>
+                    <p class="content">Building complex software systems from design to production with .NET, C#, Python, TypeScript, and distributed architectures</p>
+                    <button class="get-in-touch-button button">Get In Touch</button>
                 </div>
                 <div class="right">
                     <div class="image">
-                        <img src="" alt="">
+                        <img src="../public/profile/_P3A0716 copy.jpg2.JPG" alt="profile">
                     </div>
                 </div>
             </div>
         </section>
         <section class="about">
             <div class="container">
-                <div class="Summary">
-                    <h2 class="title">About Me</h2>
-                    <ul>
+                <div class="summary-container">
+                    <h2 class="summary-title title">About Me</h2>
+                    <ul class="summary-content content">
                         <li>Full-Stack & AI Developer with experience building end-to-end applications across frontend, backend and data layers.</li>
                         <li>Experienced in developing AI-powered workflows, integrating LLM APIs and building real-time web applications.</li>
                         <li>Former Team Lead in Unit 8200, bringing ownership, problem-solving and fast learning into production environments.</li>
@@ -93,7 +98,9 @@
                         <div class="card-content">
                             <h3>VocalGrid</h3>
                             <p>AI-powered full-stack application enabling hands-free structured data entry into dynamic tables</p>
-                            <button class="view-project button">View Project</button>
+                            <a href="https://github.com/ofekcofman98/v-and-x-project">
+                                <button class="view-project button stretchable">View Project</button>
+                            </a>
                         </div>
                     </div>
                     <div class="card">
@@ -103,17 +110,21 @@
                         <div class="card-content">
                             <h3>SQL Detective</h3>
                             <p>Cross-Platform Client-Server Software System with ASP.NET Core and Unity</p>
-                            <button class="view-project button">View Project</button>
+                            <a href="https://github.com/ofekcofman98/SQL-Detective-Game">
+                                <button class="view-project button stretchable">View Project</button>
+                            </a>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-image">
-                            <img src="" alt="">
+                            <img src="../public/projects/Cinephile/Screenshot 2026-05-31 144250.png" alt="Cinephile">
                         </div>
                         <div class="card-content">
                             <h3>Cinephile</h3>
-                            <p></p>
-                            <button class="view-project button">View Project</button>
+                            <p>Movies web app that lets users search, browse, sort, and view detailed information about movies using real-time data from the OMDb API</p>
+                            <a href="https://github.com/ofekcofman98/cinephile">
+                                <button class="view-project button stretchable">View Project</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -136,17 +147,32 @@
                             <label for="message">Message</label>
                             <textarea name="message" id="message"></textarea>
                         </div>
-                        <button class="submit-button button" id="submit">Send Message</button>
+                        <button class="submit-button button stretchable" id="submit">Send Message</button>
                     </form>
                     <div class="contact-container">
                         <h3>Contact Information</h3>
-                        <a href="mailto:ofekcofman98@gmail.com">ofekcofman98@gmail.com</a>
-                        <a href="tel:0523358941">052-335-8941</a>
-                        <span>Ramat Gan, Israel</span>
+                        <a href="mailto:ofekcofman98@gmail.com">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; vertical-align: middle;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            ofekcofman98@gmail.com
+                        </a>
+                        <a href="tel:0523358941">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; vertical-align: middle;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            052-335-8941
+                        </a>                        
+                        <span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; vertical-align: middle;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            Ramat Gan, Israel
+                        </span>
                         <div class="social-buttons-container">
-                            <a href="#" class="social-button" target="_blank">LinkedIn</a>
-                            <a href="#" class="social-button" target="_blank">GitHub</a>
-                            <a href="#" class="social-button" target="_blank">Website</a>
+                            <a href="#" class="social-button" target="_blank" aria-label="LinkedIn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a>                            
+                            <a href="#" class="social-button" target="_blank" aria-label="GitHub">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            </a>                            
+                            <a href="#" class="social-button" target="_blank" aria-label="Website">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -156,5 +182,15 @@
     <footer>
         <p>© 2026 Ofek Cofman. All rights reserved.</p>
     </footer>
+
+
+    <script>
+        const hamburger = document.querySelector('.hamburger-menu');
+        const nav = document.querySelector('nav');
+
+        hamburger.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
+</script>
 </body>
 </html>

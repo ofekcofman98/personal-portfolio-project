@@ -3,6 +3,7 @@
     --dark-grey: rgb(226 232 240);
     --text-grey: #1e293b;
     --primary-blue: #2563eb;
+    --content-grey: #64748b;
 }
 
 * {
@@ -14,6 +15,7 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
+
 
 nav {
     background-color: white;
@@ -46,13 +48,35 @@ nav a{
     margin-right: 40px;
 }
 
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.hamburger-menu span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-grey);
+    border-radius: 3px;
+    transition: all 0.3s ease; 
+}
+
+section {
+    padding: 4rem 0;
+}
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px 20px;
     /* width: 100%; */
-
+    /* border: 1px solid black; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -69,26 +93,58 @@ nav a{
     transition: background-color 0.2s ease;
 }
 
+.content {
+    color: var(--content-grey);
+    font-size: 1rem line-height 1.6;
+}
+
 /* #################### */
 
 .introduction {
     background-color: var(--bright-grey);
 }
 
-.introduction .container{    
-    margin: 30px 30px;
+.introduction .left {
+    flex: 0.6;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
 }
 
+.introduction .right{
+    flex: 0.4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .introduction .image {
-    background-color: var(--dark-gey);
-    width: 100px;
+    background-color: var(--dark-grey);
+    width: 100%;
+    max-width: 240px;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
-    margin: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .introduction .image img{
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.get-in-touch-button {
+    background-color: var(--primary-blue);
+    transition: background-color 0.2s ease;
+}
+
+.get-in-touch-button:hover {
+    background-color: #1d4ed8;
 }
 
 /* ##################### */
@@ -97,13 +153,21 @@ nav a{
     background-color: white;
 }
 
-.about .container{
-    margin: 30px 30px;
-    gap: 40px;
+.about .container {
+    gap: 50px;
+}
+
+.summary-container {
+    flex: 0.7;
+}
+
+.summary-content {
+    color: var(--content-grey);
+    list-style: none;
 }
 
 .skills-container {
-    flex: 1; 
+    flex: 0.3; 
 }
 
 .skills-container .skills-list{
@@ -147,7 +211,7 @@ nav a{
 
 .projects {
     background-color: var(--bright-grey);
-    padding: 4rem 0;
+    /* padding: 4rem 0; */
 }
 
 .projects .container{
@@ -201,7 +265,7 @@ nav a{
 }
 
 .card-content p {
-    color: #64748b;
+    color: var(--content-grey);
     font-size: 0.95rem;
     line-height: 1.5;
 }
@@ -289,7 +353,7 @@ nav a{
 }
 
 .submit-button:hover {
-    background-color: var(--primary-blue); 
+    background-color: #1d4ed8;; 
 }
 
 .contact-container {
@@ -329,19 +393,22 @@ nav a{
     justify-content: center;
     align-items: center;
     width: 40px;
-    height: 40px;
+    aspect-ratio: 1/1;
     background-color: var(--primary-blue);
     color: white !important;
     border-radius: 50%;
-    font-size: 0.8rem; 
-    font-weight: bold;
-    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.social-button svg {
+    transition: transform 0.2s ease;
 }
 
 .social-button:hover {
     transform: scale(1.15);
-    background-color: var(--primary-blue);
+    background-color: #1d4ed8;
 }
+
 /* ########## */
 
 footer {
@@ -350,4 +417,114 @@ footer {
     text-align: center;
     padding: 20px 0;
     font-size: 14px;   
+}
+
+
+/* ########################################## */
+/* Responsive Design (Mobile - Max width 768px) */
+/* ########################################## */
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 20px;
+        gap: 2rem;
+    }
+
+    .button {
+        padding: 20px;
+    }
+
+    nav {
+        padding: 15px 20px;
+        position: relative; 
+    }
+
+    nav .name {
+        padding: 0;
+    }
+    
+    .hamburger-menu {
+        display: flex;
+    }
+
+
+    nav .links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+
+        position: fixed;
+        top: 55px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 55px);
+        background-color: white;
+        z-index: 999;
+        transform: translateY(-150%); 
+        transition: transform 0.3s ease-in-out;
+    }
+
+    nav a {
+        margin-right: 0;
+        font-size: 1.5rem;
+    }
+    
+    nav.active .links {
+        transform: translateY(0);
+    }
+
+    .introduction .container {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .introduction .left {
+        align-items: center;
+    }
+
+    .introduction .left .button {
+        align-items: center;
+        margin: auto;
+    }
+
+
+    .projects-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .card {
+        width: 100%;
+    }
+    
+    .card .view-project {
+        width: 100%;
+    }
+
+    .stretchable {
+        align-self: stretch; 
+        text-align: center;  
+        width: 100%;   
+    }
+
+
+    .get-in-touch-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .get-in-touch-container .contact-container {
+        align-items: center;
+        text-align: center; 
+        width: 100%;
+    }
+
+    .social-buttons-container {
+        justify-content: center;
+        width: 100%;
+    }
 }
